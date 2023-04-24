@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Delete Job Application By ID</title>
+
+
+  <link rel="stylesheet" type="text/css" href="dlt-jobapplication.component.css">
+</head>
+
+<body>
+
+  <h2 style="text-align: center;">Delete Job Application</h2>
+  <div class="container text-light">
+    <br><br>
+    <form #findJobForm="ngForm" (ngSubmit)="dltJobAppSubmit()">
+      JobApplication_ID:<br><input type="text" #id='ngModel' required name="jobApplicationId"
+        [(ngModel)]="deleteJob.jobApplicationId"><br>
+      <div *ngIf='id.errors && findJobForm.touched' class="alert alert-danger">
+        <div [hidden]='!id.errors.required'> JobApplication ID is Mandatory:</div>
+      </div>
+      <br>
+
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="submit" value="delete" [disabled]="!findJobForm.valid">
+
+
+
+    </form>
+  </div>
+</body>
+
+</html>

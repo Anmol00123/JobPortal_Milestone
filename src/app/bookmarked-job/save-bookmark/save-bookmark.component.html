@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Save Bookmark</title>
+  <link rel="stylesheet" type="text/css" href="save-bookmark.component.css">
+</head>
+
+<body>
+
+  <h1>Save Bookmark</h1>
+
+  <div class="container">
+    <!-- <img src="assets/JobImg.jpg" alt="" class="center"> -->
+    <form #bookmarkForm="ngForm" (ngSubmit)="onSave(bookmarkForm.value)">
+      <div class="input-field">
+        <label for="site_name">Skill</label>
+        <input name="site_name" type="text" placeholder="Skill" required>
+      </div>
+      <div class="input-field">
+        <label for="site_name">Job</label>
+        <input name="site_name" type="text" placeholder="Job" required>
+      </div>
+      <div class="input-field">
+        <label for="site_name">Freelancer</label>
+        <input name="site_name" type="text" placeholder="Freelancer" required>
+      </div>
+      <div class="input-field">
+        <input type="submit" value="save" class="btn btn-primary" required>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>

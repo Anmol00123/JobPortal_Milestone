@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<div class="container text-light ">
+    <form #findskill="ngForm" (ngSubmit)="onSubmit()">
+        <table>
+            <tr>
+                <td>Enter a skill to find the freelancer</td>
+            </tr>
+            <tr>
+                <td><input required type="text" #findskill="ngModel" ngModel class="form-control" name="idno"
+                        [(ngModel)]="bookmarkedFreelancer.id"></td>
+
+                <div *ngIf='findskill.errors && findskill.touched' class="alert alert-danger">
+
+                    <div [hidden]='!findskill.errors.required'> Provide valid Id </div>
+
+                </div>
+            </tr>
+            <tr>
+                <td>
+                    <input [disabled]="!findskill.valid" type="submit" value="Get" class="btn btn-primary">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <div>
+        <h2>{{message}}</h2>
+    </div>
+</div>
+
+</html>

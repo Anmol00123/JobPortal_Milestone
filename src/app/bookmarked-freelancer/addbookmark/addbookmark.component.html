@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+<body style="background-color: #181A1B; align-self: center;" class="form-inline text-light">
+
+    <form #bookmark="ngForm" class="was_validated " (ngSubmit)="onAdd()">
+
+        <table>
+            <tr>
+                <td>Skills</td>
+                <td> <input required minlength="3" #skill='ngModel' ngModel type="text" name="skill"
+                        class="form-control " [(ngModel)]="bookmarkedFreelancer.skill.name" name="postedDate" required>
+                </td>
+                <div *ngIf='skill.errors && skill.touched' class="alert alert-danger">
+
+                    <div [hidden]='!skill.errors.required'>Enter a skill</div>
+
+                </div>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td> <input type="text" class="form-control" [(ngModel)]="bookmarkedFreelancer.skill.description"
+                        name="description" required></td>
+            </tr>
+            <tr>
+                <td>Freelancer FirstName</td>
+                <td> <input required minlength="3" #fname="ngModel" ngModel name="fname" type=" text"
+                        class="form-control" [(ngModel)]="bookmarkedFreelancer.freelancer.firstname" name="fname"
+                        required></td>
+
+                <div *ngIf='fname.errors && fname.touched' class="alert alert-danger">
+
+                    <div [hidden]='!fname.errors.required'> Enter your first name </div>
+
+                </div>
+            </tr>
+            <tr>
+                <td>Freelancer LastName</td>
+                <td> <input type="text" class="form-control" [(ngModel)]="bookmarkedFreelancer.freelancer.lastName"
+                        name="lname" required></td>
+
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td> <input required minlength="4" #pass="ngModel" ngModel type="password" class="form-control"
+                        [(ngModel)]="bookmarkedFreelancer.freelancer.password" name="pass" required></td>
+
+            </tr>
+            <tr>
+                <td>Recruiter First name</td>
+                <td> <input type="text" class="form-control" [(ngModel)]='bookmarkedFreelancer.bookmarkedBy.firstName'
+                        name="recfname" required></td>
+                <div *ngIf='pass.errors && pass.touched' class="alert alert-danger">
+
+                    <div [hidden]='!pass.errors.required'> Password cannot be empty</div>
+
+                </div>
+            </tr>
+            <tr>
+                <td>Recruiter Last name</td>
+                <td>
+                    <input type="text" class="form-control" [(ngModel)]='bookmarkedFreelancer.bookmarkedBy.lastName'
+                        name="reclname" required>
+                </td>
+            </tr>
+        </table>
+
+        <input [disabled]="!bookmark.valid" type="submit" value="Bookmark" class="btn btn-success">
+    </form>
+</body>
+
+</html>

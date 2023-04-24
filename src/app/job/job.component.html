@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+<body style="background-color: #181A1B;">
+
+    <h3 class="text-primary" style="text-align: center;"><b>JOB</b></h3>
+
+    <table>
+        <tr>
+            <td>
+                <div style="text-align:center">
+
+                    <h2><a routerLink="addjob" class="nav-item nav-link"><b>&nbsp;&nbsp;POST</b> </a></h2>
+
+                    <h2><a routerLink="deletejob" class="nav-item nav-link"><b>&nbsp;&nbsp;DELETE</b> </a></h2>
+
+                    <h2><a routerLink="updatejob" class="nav-item nav-link"><b>&nbsp;&nbsp;UPDATE</b> </a></h2>
+
+                    <h2><a routerLink="getjob" class="nav-item nav-link"><b>&nbsp;&nbsp;GET</b></a></h2>
+
+                    <h2><a routerLink="listjob" class="nav-item nav-link"><b>&nbsp;&nbsp;LIST ALL</b></a></h2>
+
+                </div>
+            </td>
+            <td>
+                <img class="d-block w-100" src="./assets/jobImg.png" alt="job image "
+                    style="width:8px;height:550px;margin-left:250px;">
+            </td>
+
+        </tr>
+    </table>
+    <router-outlet></router-outlet>
+</body>
+
+</html>

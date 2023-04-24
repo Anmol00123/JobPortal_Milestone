@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link rel="stylesheet" href="recruiter.component.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Online Job Portal</title>
+</head>
+
+<body class="text-dark container " style="background-color: #181A1B;">
+  <h3 class="text-center text-primary"><b>RECRUITER</b></h3>
+
+  <table>
+    <tr>
+      <td>
+        <div style="text-align: left;">
+
+          <div class="navbar-nav ml-auto">
+            <a routerLink="AddRecruiter" class="nav-item nav-link">
+              <h2><b>Add Recruiter</b></h2>
+            </a>
+          </div>
+
+          <div class="navbar-nav ml-auto">
+            <a routerLink="DltRecruiter" class="nav-item nav-link">
+              <h2><b>Delete Recruiter</b></h2>
+            </a>
+          </div>
+
+          <div class="navbar-nav ml-auto">
+            <a routerLink="UpdateRecruiter" class="nav-item nav-link">
+              <h2><b>Update Recruiter</b></h2>
+            </a>
+          </div>
+
+          <div class="navbar-nav ml-auto">
+            <a routerLink="FindRecruiter" class="nav-item nav-link">
+              <h2><b>Find Recruiter</b></h2>
+            </a>
+          </div>
+
+          <div class="navbar-nav ml-auto">
+            <a routerLink="BookmarkedFreelancer" class="nav-item nav-link">
+              <h2><b>Bookmark Freelancer</b></h2>
+            </a>
+          </div>
+
+          <div class="navbar-nav ml-auto">
+            <a routerLink="Feedback" class="nav-item nav-link">
+              <h2><b>Feedback</b></h2>
+            </a>
+          </div>
+
+          <!-- <div class="navbar-nav ml-auto">
+            <a routerLink="addjob" class="nav-item nav-link">
+              <h2><b>Post Jobs</b></h2>
+            </a>
+          </div> -->
+
+        </div>
+      </td>
+      <td>
+        <img class="d-block w-100" src="./assets/Recruitment.png" alt="First slide"
+          style="width:8px;height:550px;margin-left:250px;">
+      </td>
+    </tr>
+  </table>
+
+  <router-outlet></router-outlet>
+
+</body>
+
+</html>

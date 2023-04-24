@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Find feedback</title>
+  
+    
+    <link rel="stylesheet" type="text/css" href="get-feedback.component.css">  
+</head>
+<body style="background-color: #181A1B;" class="text-light">
+  
+  <p>Find feedback</p>
+  
+  <div class="container">
+    
+    <!-- form to enter details of site -->
+    <form #feedbackform= "ngForm" (ngSubmit)="onSubmit()">
+      <div class="input-field">
+        <label for="site_name">Enter ID</label>
+        <input name="site_name" type="text" 
+               placeholder="Enter ID To Find feedback" [(ngModel)]="feed.id" required>
+      </div>
+    <div class="input-field">
+      <input type="submit" value="Get" class="btn btn-primary">
+    </div>
+    
+          
+      
+    </form>
+  
+    <!-- section where feedbacks will be displayed   -->
+  
+      
+    <div class="feedback"></div>
+  </div>
+
+</body>
+</html>
+

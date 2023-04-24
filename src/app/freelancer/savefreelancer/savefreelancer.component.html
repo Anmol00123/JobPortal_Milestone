@@ -1,0 +1,11 @@
+<div class="container text-light form-group" style="background-color: #181A1B;">
+    <form #freelancer="ngForm" (ngSubmit)="onSubmit()">
+        Firstname<input type="text" class="form-control" name="fname" [(ngModel)]="free.firstName" required><br>
+        Lastname<input type="text" class="form-control" name="lname" [(ngModel)]="free.lastName" required><br>
+        Password<input type="password" class="form-control" name="pass" [(ngModel)]="free.password" required><br>
+        Applied Date <input type="date" class="form-control" name="applieddate"
+            [(ngModel)]="free.appliedJobs.appliedDate"><br>
+        Cover Letter<input type="text" class="form-control" name="cv" [(ngModel)]="free.appliedJobs.coverLetter" required><br>
+        <input type="submit" value="submit">
+    </form>
+</div> 

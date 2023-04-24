@@ -1,0 +1,38 @@
+<head>
+</head>
+<div class="container text-light" style="background-color: #181A1B;">
+    <table class="table text-light" *ngIf="jobs && jobs.length > 0  else elseBlock">
+        <thead>
+            <tr>
+                <th>JOB ID</th>
+                <th>SKILLS</th>
+                <th>DATE POSTED</th>
+                <th>ACTIVE </th>
+                <th>DELETE JOB</th>
+                <th>UPDATE JOB</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let j of jobs" style="text-align: center;">
+                <td> {{j.jobId}} </td>
+                <td> {{j.skill}} </td>
+                <td> {{j.postedDate}} </td>
+                <td>{{j.active}}</td>
+                <td>
+                    <i class="fas fa-trash" (click)=delete(j)></i>
+                </td>
+                <td>
+                    <i class="fas fa-edit" (click)=update(j)></i>
+                </td>
+                <td>
+            </tr>
+        </tbody>
+    </table>
+    <ng-template #elseBlock>
+        <h4 align="center"> There are no jobs to display, Please add the jobs! </h4>
+    </ng-template>
+
+</div>
+<div>
+    <h2>{{message}}</h2>
+</div>

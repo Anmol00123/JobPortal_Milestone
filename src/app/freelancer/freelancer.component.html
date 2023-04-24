@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="freelancer.component.css">
+    <link rel="stylesheet" href="https://stackpatd.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Online Job Portal</title>
+</head>
+
+<body class="text-dark container " style="background-color: #181A1B;">
+    <h3 class="text-center text-primary"><b>FREELANCER</b></h3>
+    <table>
+        <tr>
+            <td>
+                <div style="text-align: left;">
+                    <h2><a routerLink="add" class="nav-item nav-link"><b>Save Freelancer</b></a></h2>
+
+                    <h2><a routerLink="update" class="nav-item nav-link"><b>Update Freelancer</b></a></h2>
+
+                    <h2><a routerLink="byid" class="nav-item nav-link"><b>Find Freelancer</b></a></h2>
+
+                    <h2><a routerLink="Bookmarkedjob" class="nav-item nav-link"><b>Bookmarked Jobs</b></a></h2>
+
+                    <h2><a routerLink="Jobapplication" class="nav-item nav-link"><b>Job Application</b></a></h2>
+
+                    <h2><a routerLink="Skill" class="nav-item nav-link"><b>Skill</b></a></h2>
+
+
+                    <h2><a routerLink="SkillExperience" class="nav-item nav-link"><b>Skill Experience</b></a></h2>
+                </div>
+            </td>
+            <td>
+                <img class="d-block w-100" src="./assets/Resume.png" alt="First slide"
+                    style="width:10px;height:650px;margin-left:250px;">
+            </td>
+        </tr>
+    </table>
+
+    <router-outlet></router-outlet>
+
+</body>
+
+</html>

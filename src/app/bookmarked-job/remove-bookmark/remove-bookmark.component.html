@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Remove Bookmark</title>
+  
+    
+    <link rel="stylesheet" type="text/css" href="remove-bookmark.component.css">  
+</head>
+<body>
+  
+  <h1>Remove Bookmark</h1>
+  
+  <div class="container">
+    <!-- <img src="assets/JobImg.jpg" alt="" class="center"> -->
+    <!-- form to enter details of site -->
+    <form #bookmarkForm= "ngForm" (ngSubmit)="onRemove()">
+      <div class="input-field">
+        <label for="site_name">Enter ID</label>
+        <input name="site_name" type="text" 
+               placeholder="Enter ID To Remove Bookmark" [(ngModel)]="bookmarkedJob.id" required>
+      </div>
+    <div class="input-field">
+      <input type="submit" value="Remove" class="btn btn-primary">
+    </div>
+    
+          
+      
+    </form>
+  
+    <!-- section where bookmarks will be displayed   -->
+  
+      
+    <div class="bookmarks"></div>
+  </div>
+
+</body>
+</html>

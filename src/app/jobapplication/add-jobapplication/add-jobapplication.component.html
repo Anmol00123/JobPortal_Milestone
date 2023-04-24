@@ -1,0 +1,47 @@
+<h2 style="text-align: center;">Apply Job-Application</h2>
+
+<div class="container text-light">
+  <form #saveJobForm="ngForm" (ngSubmit)="onSubmit()">
+
+
+    <!-- Job Details : <br> -->
+    <br><br>
+    <label>Active:</label>
+    <div>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="YES" name="active"
+        value="true" [(ngModel)]="applyJob.postedJobs.active" />
+      <label for="YES">Yes</label><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="NO" name="active"
+        value="false" [(ngModel)]="applyJob.postedJobs.active" />
+      <label for="NO">No</label>
+    </div>
+    <br>
+    Posted_Date: <br>
+    <input required #posteddate='ngModel' type="datetime-local" [(ngModel)]="applyJob.postedJobs.postedDate"
+      name="postedDate"><br>
+    <div *ngIf='posteddate.errors && saveJobForm.touched' class="alert alert-danger">
+      <div [hidden]='!posteddate.errors.required'> Posted Date is Mandatory:</div>
+    </div>
+    <br><br>
+    Applied_Date<br>
+    <input required #applieddate='ngModel' type="datetime-local" [(ngModel)]="applyJob.appliedDate"
+      name="appliedDate"><br>
+    <div *ngIf='applieddate.errors && saveJobForm.touched' class="alert alert-danger">
+      <div [hidden]='!applieddate.errors.required'> Applied Date is Mandatory:</div>
+    </div>
+    <br><br>
+    CoverLetter:<br>
+    <input type="text" #coverletter='ngModel' required minlength="3" maxlength="15" name="applyJob.coverLetter"
+      [(ngModel)]="applyJob.coverLetter"><br><br><br>
+    <div *ngIf='coverletter.errors && saveJobForm.touched' class="alert alert-danger">
+      <div [hidden]='!coverletter.errors.required'> Cover Letter is Mandatory:</div>
+      <div [hidden]='coverletter.errors.pattern'>Cover Letter should lngth between 3 to 15</div>
+    </div>
+    <div style="text-align: center;">
+      <input type="submit" value="Apply Job" [disabled]="!saveJobForm.valid">
+
+    </div>
+
+
+  </form>
+</div>

@@ -1,0 +1,50 @@
+<div class="container text-light">
+    <form #jobForm="ngForm" (ngSubmit)="onSubmit()">
+
+
+        <div>
+            Skill name <input required minlength="3" #skillName='ngModel' ngModel type="text" class="form-control"
+                placeholder="skill" name="skill" [(ngModel)]="job.skill.name" required><br>
+
+            <div *ngIf='skillName.errors && skillName.touched' class="alert alert-danger">
+
+                <div [hidden]='!skillName.errors.required'> Enter a skill </div>
+
+            </div>
+        </div>
+
+        Skill description<textarea type="text" class="form-control" placeholder="description" name="description"
+            [(ngModel)]="job.skill.description" required></textarea>
+        <br>
+
+        <div>
+            Recruiter details<br>
+            First Name <input required minlength="3" #fname='ngModel' ngModel name='fname' type="text"
+                class="form-control" placeholder="fname" [(ngModel)]="job.postedBy.firstName" name="postedBy firstName"
+                required><br>
+            <div *ngIf='fname.errors && jobForm.touched' class="alert alert-danger">
+                <div *ngIf='fname.errors.required'>Provide first Name</div>
+                <div *ngIf='!fname.errors.pattern'>Name should contain atleast 3 characters</div>
+            </div>
+        </div>
+        <div>
+            Last name <input type="text" class="form-control" placeholder="lname" name="postedBy lastname"
+                [(ngModel)]="job.postedBy.lastName" required>
+            <br>
+        </div>
+
+
+        Date<input type="datetime-local" [(ngModel)]="job.postedDate" name="postedDate" required><br>
+
+        <label>Active</label>
+        <div>
+            <input type="radio" id="YES" name="active" value="true" [(ngModel)]="job.active" required />
+            <label for="YES">Yes</label><br>
+            <input type="radio" id="NO" name="active" value="false" [(ngModel)]="job.active" required />
+            <label for="NO">No</label>
+        </div>
+        <br>
+
+        <input [disabled]="!jobForm.valid" type="submit" value="POST" class="btn btn-success">
+    </form>
+</div>

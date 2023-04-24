@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Save feedback</title>
+
+
+  <link rel="stylesheet" type="text/css" href="save-feedback.component.css">
+</head>
+
+<body style="background-color: #181A1B;" class="text-light ">
+
+  <h1>Feedback</h1>
+
+  <div class="feedback">
+    <p>Dear Customer,<br>
+      Thank you for getting our services. Please spare some moments to give us
+      your valuable feedback as it will help us in improving our service.</p>
+
+    <form #userForm="ngForm" (ngSubmit)='onSubmit()'>
+
+      Rate:<br>
+      <div class="rate">
+        <input type="radio" id="star5" name="rate" value="5" />
+        <label for="star5" title="text">5 stars</label>
+        <input type="radio" id="star4" name="rate" value="4" />
+        <label for="star4" title="text">4 stars</label>
+        <input type="radio" id="star3" name="rate" value="3" />
+        <label for="star3" title="text">3 stars</label>
+        <input type="radio" id="star2" name="rate" value="2" />
+        <label for="star2" title="text">2 stars</label>
+        <input type="radio" id="star1" name="rate" value="1" />
+        <label for="star1" title="text">1 star</label>
+      </div>
+
+      <div class="clear"></div>
+      <hr class="survey-hr">
+      <br>
+      <br>
+      Your comments: <br>
+      <textarea name="comments" rows="6" cols="36" [(ngModel)]="feed.comments" required></textarea><br><br>
+
+      <table>
+        <tr>
+          <td>
+            User Details:<br>
+            firstName<input type="text" class="form-inline" name="fname" [(ngModel)]="feed.createdBy.firstName"
+              required>
+            lastName<input type="text" class="form-inline" name="lname" [(ngModel)]="feed.createdBy.lastName" required>
+          </td>
+          <td>
+            &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+            &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+            &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+          </td>
+          <td>
+            Rating for:<br>
+            firstName<input type="text" class="form-inline" name="fname" [(ngModel)]="feed.createdFor.firstName"
+              required>
+            lastName<input type="text" class="form-inline" name="lname" [(ngModel)]="feed.createdFor.lastName" required>
+
+          </td>
+        </tr>
+      </table>
+      <br>
+      <p style="text-align: center;"><input type="submit" value="Submit">
+      </p>
+    </form>
+  </div>
+</body>
+
+</html>

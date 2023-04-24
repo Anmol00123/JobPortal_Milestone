@@ -1,0 +1,55 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Save save-jobapplication</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="add-jobapplication.component.css">  
+</head>
+<body> -->
+<h2 style="text-align: center;">Update Job-Application</h2>
+<div class="container text-light">
+    <form #updateJobForm="ngForm" (ngSubmit)="updateSubmit()">
+
+        <br><br>
+        <label>Active:</label>
+        <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" id="YES" name="active"
+                value="true" [(ngModel)]="updateJob.postedJobs.active" />
+            <label for="YES">Yes</label><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" id="NO" name="active"
+                value="false" [(ngModel)]="updateJob.postedJobs.active" />
+            <label for="NO">No</label>
+        </div>
+        <br>
+
+        Posted_Date: <br><input required #posteddate='ngModel' type="datetime-local"
+            [(ngModel)]="updateJob.postedJobs.postedDate" name="postedDate"><br>
+        <div *ngIf='posteddate.errors && updateJobForm.touched' class="alert alert-danger">
+            <div [hidden]='!posteddate.errors.required'> Posted Date is Mandatory:</div>
+        </div>
+        <br><br>
+
+        Applied_Date<br><input required #applieddate='ngModel' type="datetime-local" [(ngModel)]="updateJob.appliedDate"
+            name="appliedDate"><br>
+        <div *ngIf='applieddate.errors && updateJobForm.touched' class="alert alert-danger">
+            <div [hidden]='!applieddate.errors.required'> Applied Date is Mandatory:</div>
+        </div>
+        <br><br>
+        CoverLetter:<br><input type="text" #coverletter='ngModel' required minlength="3" maxlength="15"
+            name="updateJob.coverLetter" [(ngModel)]="updateJob.coverLetter"><br>
+        <div *ngIf='coverletter.errors && updateJobForm.touched' class="alert alert-danger">
+            <div [hidden]='!coverletter.errors.required'> Cover Letter is Mandatory:</div>
+            <div [hidden]='coverletter.errors.pattern'>Cover Letter should lngth between 3 to 15</div>
+        </div>
+
+        <div style="text-align: center;">
+            <!-- awardedTo<input type="text" placeholder="freelancer" name="awardedTo"><br> -->
+            <input type="submit" value="Apply Job" [disabled]="!updateJobForm.valid">
+        </div>
+
+    </form>
+</div>

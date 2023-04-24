@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>experience</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Patua+One">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="update-experience.component.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body style="background-color: #181A1B;" class="text-light">
+    <div class="container">
+        <form #jobForm="ngForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="contact-form">
+                        <h2 class="text-primary">UPDATE EXPERIENCE</h2>
+                        <p class="hint-text">update experience to your skills...</p>
+
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label for="inputName">Experience ID</label>
+                                    <input type="text" class="form-control" id="inputPhone" required
+                                        [(ngModel)]="skillexperience.skill.id">
+
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label for="inputEmail">Freelancer Id</label>
+                                    <input type="text" class="form-control" id="inputSubject" required
+                                        [(ngModel)]="skillexperience.freelancer.id">
+
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label for="inputPhone">Years</label>
+                                    <input type="text" class="form-control" id="inputPhone" required
+                                        [(ngModel)]="skillexperience.years">
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Send</button>
+                        <!--  </form> -->
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

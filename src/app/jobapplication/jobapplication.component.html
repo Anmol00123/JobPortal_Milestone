@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link rel="stylesheet" href="jobapplication.component.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Online Job Portal</title>
+
+  <style>
+    img {
+      clip: rect(0px, 60px, 200px, 0px);
+    }
+  </style>
+</head>
+
+<body>
+
+  <table class="table center">
+    <tr>
+      <th>
+        <a routerLink='AddJobapplication'>Apply Job</a>
+      </th>
+      <th>
+        <a routerLink="DltJobapplication">Delete Job </a>
+      </th>
+      <th>
+        <a routerLink="UpdateJobapplication">Update Job </a>
+      </th>
+      <th>
+        <a routerLink="FindJobapplication">Find Job-ByID </a>
+      </th>
+    </tr>
+  </table>
+</body>
+<router-outlet></router-outlet>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<div class="container text-light">
+    <form #jobId="ngForm" (ngSubmit)="onGetJob()">
+        <table>
+            <tr>
+
+                <td>Enter the job id to get details</td>
+            </tr>
+            <tr>
+                <td>
+                    <input required minlength="1" #id='ngModel' type="text" placeholder="job id" class="form-control"
+                        [(ngModel)]="job.jobId" required><br>
+                    <div *ngIf='id.errors
+                        && id.touched' class="alert alert-danger">
+
+                        <div [hidden]='!id.errors.required'>
+
+                            Provide Employee Company Name
+                        </div>
+                        <div [hidden]='id.errors.pattern'>ID name should not be empty
+
+                        </div>
+
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input [disabled]='!jobId.valid' type="submit" value="GET" class="btn btn-outline-primary">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+</html>

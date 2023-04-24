@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<div class="container text-light ">
+    <form #deleteForm="ngForm" (ngSubmit)="onDelete()">
+        <table>
+            <tr>
+                <td>Enter bookmark id to delete</td>
+            </tr>
+            <tr>
+                <td><input required type="text" #delid="ngModel" ngModel class="form-control" name="idno"
+                        [(ngModel)]="bookmarkedFreelancer.id" required>
+                </td>
+                <div *ngIf='delid.errors && delid.touched' class="alert alert-danger">
+
+                    <div [hidden]='!delid.errors.required'> Provide valid Id </div>
+
+                </div>
+            </tr>
+            <tr>
+                <td>
+                    <input [disabled]="!deleteForm.valid" type="submit" value="Delete" class="btn btn-danger">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <div>
+        <h2>{{message}}</h2>
+    </div>
+</div>
+
+</html>

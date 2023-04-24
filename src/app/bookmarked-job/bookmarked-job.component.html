@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+
+</head>
+
+<body style="background-color: #181A1B;">
+    <img src="assets/bookmark.png" alt="" width="60%">
+    <table class="table center">
+        <tr>
+            <th>
+                <a routerLink='save-bookmark'>Save</a>
+            </th>
+            <th>
+                <a routerLink="remove-bookmark">Remove </a>
+            </th>
+            <th>
+                <a routerLink="find-by-id">FindById </a>
+            </th>
+            <th>
+                <a routerLink="find-by-skill">FindBySkill </a>
+            </th>
+        </tr>
+    </table>
+</body>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Find Job Application By ID</title>
+
+  <link rel="stylesheet" type="text/css" href="findbyid-jobapplication.component.css">
+</head>
+
+<body style="background-color: #181A1B;">
+
+  <h2 style="text-align: center;">Find Job Application</h2>
+  <div class="container text-light">
+    <br><br>
+    <form #findJobForm="ngForm" (ngSubmit)="findSubmit()">
+
+      <p style="color: aliceblue;">Job Application ID</p>:<input type="text" #id='ngModel' required name="jobApplicationId"
+        [(ngModel)]="findJob.jobApplicationId"><br><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <div *ngIf='id.errors && findJobForm.touched' class="alert alert-danger">
+        <div [hidden]='!id.errors.required'> JobApplication ID is Mandatory:</div>
+      </div>
+      <input type="submit" value="Find Job" [disabled]="!findJobForm.valid">
+
+
+    </form>
+  </div>
+</body>
+
+</html>

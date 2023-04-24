@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<div class="container text-light ">
+    <form #deleteForm="ngForm" (ngSubmit)="onDelete()">
+        <table>
+            <tr>
+                <td>Enter Job id to delete</td>
+            </tr>
+            <tr>
+                <td><input required minlength="1" type="text" #delForm='ngModel' class="form-control" name="idno"
+                        [(ngModel)]="job.jobId" required></td>
+
+                <div *ngIf='delForm.errors && deleteForm.touched' class="alert alert-danger">
+                    <div [hidden]='!delForm.errors.required'>Provide valid ID</div>
+                    <div [hidden]='delForm.errors.pattern'>ID cannot be empty</div>
+                </div>
+
+
+            </tr>
+            <tr>
+                <td>
+                    <input [disabled]="!deleteForm.valid" class="btn btn-outline-danger" type="submit" value="Delete"
+                        class="btn btn-danger">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <div>
+        <h2>{{message}}</h2>
+    </div>
+</div>
+
+</html>

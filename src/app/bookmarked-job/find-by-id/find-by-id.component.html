@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Find Bookmark</title>
+  
+    
+    <link rel="stylesheet" type="text/css" href="find-by-id.component.css">  
+</head>
+<body>
+  
+  <h1>Find Bookmark</h1>
+  
+  <div class="container">
+    <!-- <img src="assets/JobImg.jpg" alt="" class="center"> -->
+    <!-- form to enter details of site -->
+    <form #bookmarkForm= "ngForm" (ngSubmit)="onFindById(bookmarkForm.value)">
+      <div class="input-field">
+        <label for="site_name">Enter ID</label>
+        <input name="site_name" type="text" 
+               placeholder="Enter ID To Find Bookmark" required>
+      </div>
+    <div class="input-field">
+      <input type="submit" value="Get" class="btn btn-primary">
+    </div>
+    
+          
+      
+    </form>
+  
+    <!-- section where bookmarks will be displayed   -->
+  
+      
+    <div class="bookmarks"></div>
+  </div>
+
+</body>
+</html>

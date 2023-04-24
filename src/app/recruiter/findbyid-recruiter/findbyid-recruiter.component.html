@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Find Job Application By ID</title>
+  <link rel="stylesheet" type="text/css" href="findbyid-recruiter.component.css">
+</head>
+
+<body style="background-color: #181A1B;" class="text-light form-inline">
+
+  <h2 style="text-align: center;"> Find Recruiter: </h2>
+  <div class="container text-light">
+    <form #findJobForm="ngForm" (ngSubmit)="findSubmit()">
+      <br><br>
+      Recruiter_ID:<input #id='ngModel' required type="text" name="recruiterId"
+        [(ngModel)]="findingRecruiter.recruiterId"><br>
+      <div *ngIf='id.errors && findJobForm.touched' class="alert alert-danger">
+        <div [hidden]='!id.errors.required'> Provide Recruiter ID:</div>
+      </div>
+      <input [disabled]="!findJobForm.valid" type="submit" value="Find">
+
+    </form>
+  </div>
+</body>
+
+</html>
